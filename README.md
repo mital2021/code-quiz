@@ -19,7 +19,7 @@ https://mital2021.github.io/code-quiz/
 
 # Screenshot of my application
 
-![](./assets/image/code-quiz.jpg)
+![](./assets/image/codequiz.jpg)
 
 
 ## Contribution
