@@ -1,8 +1,8 @@
-# Password-Generator
+# Code Quiz Challenge
 
 ## Purpose
 
-Its an application that generate random password based on people's selection of criteria.
+Its an application that lets you take time quiz on javascript thats stores scores.
 
 
 
@@ -13,8 +13,7 @@ Its an application that generate random password based on people's selection of 
 
 ## Website
 
-https://mital2021.github.io/Password-Generator/
-
+https://mital2021.github.io/code-quiz/
 
 
 
