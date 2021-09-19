@@ -1,7 +1,8 @@
-# Code Quiz Challenge
+# Password-Generator
+
 ## Purpose
 
-Its an application that lets you take a timed quiz that stores high scores.
+Its an application that generate random password based on people's selection of criteria.
 
 
 
@@ -12,12 +13,14 @@ Its an application that lets you take a timed quiz that stores high scores.
 
 ## Website
 
-https://mital2021.github.io/code-quiz/
+https://mital2021.github.io/Password-Generator/
+
+
+
 
 # Screenshot of my application
 
-![](./assets/image/code-quiz.jgp)
-
+![](./assets/image/codequiz.jpg)
 
 
 ## Contribution
