@@ -14,12 +14,8 @@ Its an application that lets you take a timed quiz that stores high scores.
 
 https://mital2021.github.io/code-quiz/
 
-
-
-
 # Screenshot of my application
 
-![](./assets/image/codequiz.jpg)
 
 
 ## Contribution
