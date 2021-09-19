@@ -14,68 +14,93 @@
     <!--view high score and time-->
     <header>
 
-      <h3>View high score</h3>  
+      <h3 id ="view-scores">View high score</h3>  
+    
       
         <nav>
-            <h3 id= "timer">Time</h3>
+            <h3 id= "timer">Time:0</h3>
         </nav>
-
+        
     </header>
 
 
 <!--first page-->
     <div class = "container"> 
-            <div id= "startpage">
-       
+      <section id= "startpage">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
             <h2 class="title">Coding Quiz Challenge</h2>
             <h3>Try to answer the following code-related questions within the time limit.
             <br>Keep in mind that incorrect answers will penalize your
             <br> ten seconds!</br></br></h3>
 
             <button id="start">Start Quiz</button>
-                
+        </div>   
         </div> 
+    </section>
 <!--question answer button-->
-        <div id ="quiz">
-  
-         <div id="questions"></div>
-           
-              <button id="answer1" value="0"class="answerBtn">1</button>
-              <button id="answer2" value="1" class="answerBtn">2</button>
-              <button id="answer3" value="2" class="answerBtn">3</button>
-              <button id="answer4" value="3" class="answerBtn">4</button>
-            
-        <div class="message"></div>
+
+        <section id ="quiz">
+            <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+             <div id="questions"></div>
          
-        </div>
+              <button id="answer1" value="0" type="button" class="answerBtn">1</button>
+
+              <button id="answer2" value="1" type="button" class="answerBtn">2</button>
+
+              <button id="answer3" value="2" type="button" class="answerBtn">3</button>
+
+              <button id="answer4" value="3" type="button" class="answerBtn">4</button>
+              
+              <div id="corretWrong" class="font-weight-light font-italic">
+             
+              </div>
+              </div>
+
+            </div>
+        </section>
+
+
+              
 <!--gameover shows final score-->
-        <div id="gameover">
+        <section id="gameover">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
 
-              <div id="finalScore"></div>
-                <h2>All done!</h2>
-              <div id = "score"><p>Your final score is: </p></div>
+             
+              <h2>All done!</h2>
+              <p>Your final score is:<span id="score"></span></p>
           
-              <input type="text" size = "40" placeholder="Enter initials" name="intials" id="initials"/>
-              <button id="submitScore">Submit</button>
-        </div>
-
+              <p><input type="text" size = "40" placeholder="Enter initials" name="intials" id="initials"/>
+              <button id="submitScore">Submit</button></p>
+              </div>
+            </div>
+        </section>
 
 <!--High score page-->
-        <div id=highscore>
-        <div id="scorePage"></div>
-                <h2>High Score</h2>
-               
-        <div id = "highscore-initials"></div>
-            
-        </div>
 
-<!--goback and highscore button-->
-        <div id="lastPage">
-            <button id="goBack">Go Back</button>
-            <button id="highScorebtn">Clear High score</button>
-        </div>
+        <section id="highscore">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6">
 
+            <h2>High Score</h2>
+           
+            <ol id="scorePage"></ol>
+        
+        
+        <button id="goBack">Go Back</button>
+        <button id="highScorebtn" >Clear High score</button>
+        
+        </div>
+            </div>
+        </section>
     </div>
+      
 
     <script src="./assets/js/script.js"></script>
 
