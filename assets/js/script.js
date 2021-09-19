@@ -1,42 +1,38 @@
 //Variables
-var startButton = document.getElementById("start");
+
 var timerContent=document.getElementById("timer");
 var timeLeft=75;
 
 var startpageContent=document.getElementById("startpage")
+var startButton = document.getElementById("start");
 
 var quizContent = document.getElementById("quiz");
 var quizQuestion= document.getElementById("questions");
-var questionCount = 0;
-var messageContent=document.getElementById("message")
-var correctwrongContent = document.querySelector("#corretWrong");
+var displayE1= document.getElementById("display");
+var questionCount=0;
 
 var gameContent= document.getElementById("gameover");
 var scoreContent=document.getElementById("score");
-var scoreSubmit=document.getElementById("submitScore")
+var scoreSubmit=document.getElementById("submitScore");
+var initialsInput = document.getElementById("initials");
+
 
 var highscoreContent= document.getElementById("highscore");
-var initialsInput = document.getElementById("initials");
 var scorePage1=document.getElementById("scorePage");
+var goBackBtn = document.getElementById("goBack");
+var clearScrBtn = document.getElementById("highScorebtn");
 var scoreList=[];
 
-
 var answersBtn = document.querySelectorAll("button.answerBtn")
-
 var button1 = document.querySelector("#answer1");
 var button2 = document.querySelector("#answer2");
 var button3 = document.querySelector("#answer3");
 var button4 = document.querySelector("#answer4");
 
 
-var goBackBtn = document.getElementById("goBack");
-var clearScrBtn = document.getElementById("highScorebtn");
-var viewScore = document.getElementById("view-scores");
-
-
 //Questions and Answers
  
-var myQuestions =[
+var myQuestions = [
          {
          question: "Commonly used data types Do Not Include:",
          answers:[
@@ -91,19 +87,9 @@ var myQuestions =[
 
    //variables
    
-   var questionCount=0;
     var timerInterval;
 
-    function startQuiz() {
-        startpageContent.style.display = "none";
-        quizContent.style.display = "block";
-        questionCount = 0;
-    
-        setTime();  
-        generateQuestion(questionCount);
-    }
-    
-//function to start timer
+ //function to start timer
 function setTime() {
     timerInterval = setInterval(function () {
       timeLeft--;
@@ -118,6 +104,17 @@ function setTime() {
   }, 1000);
 }
 
+//Start Quiz
+    function startQuiz() {
+        startpageContent.style.display = "none";
+        quizContent.style.display = "block";
+        questionCount = 0;
+    
+        setTime();  
+        generateQuestion(questionCount);
+    }
+    
+//Generate Questions
 
     function generateQuestion(id) {
         if (id < myQuestions.length) {
@@ -131,18 +128,13 @@ function setTime() {
     
 
 
-
-
-
-
 //function to check answer 
 function checkAnswer(event) {
     event.preventDefault();
 
-    correctwrongContent.style.display = "block";
+    displayE1.style.display = "block";
     var p = document.createElement("p");
-    correctwrongContent.appendChild(p);
-
+    displayE1.appendChild(p);
 
 setTimeout(function () {
    p.style.display = 'none';
@@ -155,7 +147,6 @@ setTimeout(function () {
         p.textContent = "Wrong!";
     }
 
-   
     if (questionCount < myQuestions.length) {
         questionCount++;
     }
@@ -164,7 +155,7 @@ setTimeout(function () {
 }
 
 
-//from here the code stopped working
+//Add score
 
 function addScore(event) {
     event.preventDefault();
@@ -185,15 +176,14 @@ function addScore(event) {
       });
 
 
-
       scorePage1.innerHTML="";
       for (var i = 0; i < scoreList.length; i++) {
           var li = document.createElement("li");
           li.textContent = `${scoreList[i].initials}: ${scoreList[i].score}`;
           scorePage1.append(li);
       }
-
-  // Add to local storage
+//local storage
+ 
   storeScores();
   displayScores();
 }
@@ -204,11 +194,9 @@ function storeScores() {
 
 
 function displayScores() {
-    // Get stored scores from localStorage
-    // Parsing the JSON string to an object
-    let storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
+  
+    var storedScoreList = JSON.parse(localStorage.getItem("scoreList"));
 
-    // If scores were retrieved from localStorage, update the scorelist array to it
     if (storedScoreList !== null) {
         scoreList = storedScoreList;
     }
@@ -220,11 +208,11 @@ function clearScores() {
     scorePage1.innerHTML="";
 }
   
-  //  Button starts the quiz!
+  //  Button function to start the quiz!
   startButton.addEventListener("click",startQuiz);
 
 
-// Check answers loop
+
 answersBtn.forEach(item => {
     item.addEventListener('click', checkAnswer);
 });
@@ -245,16 +233,6 @@ goBackBtn.addEventListener("click",function() {
 clearScrBtn.addEventListener("click", clearScores);
 
 
-// View/Hide High Scores Button
-viewScore.addEventListener("click", function () {
-    if (highscoreContent.style.display === "none") {
-        highscoreContent.style.display = "block";
-    } else if (highscoreContent.style.display === "block") {
-        highscoreContent.style.display = "none";
-    } else {
-        return alert("No scores to show.");
-    }
-});
 
 
 

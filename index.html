@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
     <title>Code Quiz</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   
@@ -14,12 +15,12 @@
     <!--view high score and time-->
     <header>
 
-      <h3 id ="view-scores">View high score</h3>  
+         <h3>View high score</h3>  
     
       
-        <nav>
-            <h3 id= "timer">Time:0</h3>
-        </nav>
+            <nav>
+              <h3 id= "timer">Time:0</h3>
+            </nav>
         
     </header>
 
@@ -27,49 +28,36 @@
 <!--first page-->
     <div class = "container"> 
       <section id= "startpage">
-        <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
+        
             <h2 class="title">Coding Quiz Challenge</h2>
             <h3>Try to answer the following code-related questions within the time limit.
             <br>Keep in mind that incorrect answers will penalize your
             <br> ten seconds!</br></br></h3>
 
             <button id="start">Start Quiz</button>
-        </div>   
-        </div> 
+        
     </section>
 <!--question answer button-->
 
         <section id ="quiz">
-            <div class="row">
-            <div class="col-3"></div>
-            <div class="col-6">
+           
              <div id="questions"></div>
-         
-              <button id="answer1" value="0" type="button" class="answerBtn">1</button>
-
-              <button id="answer2" value="1" type="button" class="answerBtn">2</button>
-
-              <button id="answer3" value="2" type="button" class="answerBtn">3</button>
-
-              <button id="answer4" value="3" type="button" class="answerBtn">4</button>
-              
-              <div id="corretWrong" class="font-weight-light font-italic">
+          
+             <button id="answer1" value="1" type="button" class="answerBtn">1</button>
+             <button id="answer2" value="2" type="button" class="answerBtn">2</button>
+             <button id="answer3" value="3" type="button" class="answerBtn">3</button>
+             <button id="answer4" value="4" type="button" class="answerBtn">4</button>
+            
+             <div id="display" class="font-weight-light font-italic">
              
-              </div>
-              </div>
-
             </div>
         </section>
 
 
               
-<!--gameover shows final score-->
+<!--gameover final score-->
         <section id="gameover">
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="col-6">
+            
 
              
               <h2>All done!</h2>
@@ -77,27 +65,21 @@
           
               <p><input type="text" size = "40" placeholder="Enter initials" name="intials" id="initials"/>
               <button id="submitScore">Submit</button></p>
-              </div>
-            </div>
+              
         </section>
 
 <!--High score page-->
 
         <section id="highscore">
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="col-6">
-
+           
             <h2>High Score</h2>
            
             <ol id="scorePage"></ol>
         
-        
         <button id="goBack">Go Back</button>
         <button id="highScorebtn" >Clear High score</button>
         
-        </div>
-            </div>
+        
         </section>
     </div>
       
